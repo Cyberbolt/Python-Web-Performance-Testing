@@ -5,16 +5,16 @@ Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
 Running 2m test @ http://127.0.0.1:8000
   16 threads and 1600 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    60.65ms   29.19ms 235.95ms   72.04%
-    Req/Sec     1.69k   313.39     3.62k    65.59%
+    Latency    38.48ms   12.92ms 181.26ms   74.63%
+    Req/Sec     2.62k   230.59     6.04k    71.54%
   Latency Distribution
-     50%   56.73ms
-     75%   70.29ms
-     90%  109.16ms
-     99%  146.04ms
-  3220918 requests in 2.00m, 414.68MB read
-Requests/sec:  26819.81
-Transfer/sec:      3.45MB
+     50%   35.90ms
+     75%   45.46ms
+     90%   56.62ms
+     99%   76.81ms
+  5003585 requests in 2.00m, 644.19MB read
+Requests/sec:  41664.12
+Transfer/sec:      5.36MB
 
 
 Python 3.9.12, PyPy 7.3.9
