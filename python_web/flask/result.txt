@@ -1,0 +1,18 @@
+CPython 3.11.0
+Command: gunicorn -w 8 -k gevent main:app
+Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
+
+Running 2m test @ http://127.0.0.1:8000
+  16 threads and 1600 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.74ms   87.60ms   2.00s    98.77%
+    Req/Sec     3.94k   807.64     5.97k    92.20%
+  Latency Distribution
+     50%  114.00us
+     75%  364.00us
+     90%  667.00us
+     99%  292.76ms
+  3905987 requests in 2.00m, 599.73MB read
+  Socket errors: connect 0, read 1, write 0, timeout 8845
+Requests/sec:  32529.44
+Transfer/sec:      4.99MB
