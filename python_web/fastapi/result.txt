@@ -1,0 +1,17 @@
+CPython
+Command: gunicorn -w 8 -k uvicorn.workers.UvicornWorker main:app
+Test: wrk -t16 -c1000 -d120s --latency http://127.0.0.1:8000
+
+Running 2m test @ http://127.0.0.1:8000
+  16 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.88ms   19.15ms 223.91ms   72.17%
+    Req/Sec     1.72k   305.80     5.81k    68.11%
+  Latency Distribution
+     50%   31.12ms
+     75%   46.63ms
+     90%   66.21ms
+     99%   92.12ms
+  3288149 requests in 2.00m, 460.97MB read
+Requests/sec:  27379.51
+Transfer/sec:      3.84MB
