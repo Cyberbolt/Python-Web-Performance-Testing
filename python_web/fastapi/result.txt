@@ -17,20 +17,20 @@ Requests/sec:  41664.12
 Transfer/sec:      5.36MB
 
 
-Python 3.9.12, PyPy 7.3.9
+Python 3.8.13, PyPy 7.3.9
 Command: gunicorn -w 8 -k uvicorn.workers.UvicornH11Worker main:app
 Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
 
 Running 2m test @ http://127.0.0.1:8000
   16 threads and 1600 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    60.60ms   55.56ms 941.10ms   91.58%
-    Req/Sec     1.84k   730.69     8.87k    66.56%
+    Latency    37.94ms   31.32ms 592.95ms   82.97%
+    Req/Sec     2.89k     1.28k    8.67k    81.84%
   Latency Distribution
-     50%   42.05ms
-     75%   82.30ms
-     90%  111.23ms
-     99%  237.24ms
-  3516885 requests in 2.00m, 452.79MB read
-Requests/sec:  29285.58
-Transfer/sec:      3.77MB
+     50%   36.07ms
+     75%   49.40ms
+     90%   64.38ms
+     99%  138.64ms
+  5515105 requests in 2.00m, 710.05MB read
+Requests/sec:  45922.10
+Transfer/sec:      5.91MB
