@@ -16,3 +16,23 @@ Running 2m test @ http://127.0.0.1:8000
   Socket errors: connect 0, read 1, write 0, timeout 8845
 Requests/sec:  32529.44
 Transfer/sec:      4.99MB
+
+
+Python 3.9.12, PyPy 7.3.9
+Command: gunicorn -w 8 -k gevent main:app
+Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
+
+Running 2m test @ http://127.0.0.1:8000
+  16 threads and 1600 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.84ms   86.27ms   2.00s    98.61%
+    Req/Sec     5.89k     1.85k    9.07k    83.34%
+  Latency Distribution
+     50%   65.00us
+     75%  133.00us
+     90%  493.00us
+     99%  296.60ms
+  5491132 requests in 2.00m, 843.12MB read
+  Socket errors: connect 0, read 1101, write 0, timeout 2630
+Requests/sec:  45727.48
+Transfer/sec:      7.02MB
