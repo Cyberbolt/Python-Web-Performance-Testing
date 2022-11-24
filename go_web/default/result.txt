@@ -1,0 +1,17 @@
+go1.17.5
+Command: go run http_serve.go
+Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
+
+Running 2m test @ http://127.0.0.1:8000
+  16 threads and 1600 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.58ms    9.93ms 202.99ms   87.75%
+    Req/Sec    15.69k     3.77k   44.41k    70.22%
+  Latency Distribution
+     50%    5.40ms
+     75%   11.44ms
+     90%   20.73ms
+     99%   46.69ms
+  29958204 requests in 2.00m, 3.29GB read
+Requests/sec: 249426.74
+Transfer/sec:     28.07MB
