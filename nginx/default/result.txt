@@ -1,0 +1,17 @@
+nginx/1.21.5
+Test: wrk -t16 -c1600 -d120s --latency http://127.0.0.1:8000
+
+Running 2m test @ http://127.0.0.1:8000
+  16 threads and 1600 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.66ms    8.87ms 112.19ms   85.85%
+    Req/Sec    18.16k     3.96k   52.63k    69.88%
+  Latency Distribution
+     50%    4.46ms
+     75%   11.43ms
+     90%   19.57ms
+     99%   39.12ms
+  34666544 requests in 2.00m, 5.33GB read
+  Socket errors: connect 0, read 0, write 0, timeout 168
+Requests/sec: 288658.26
+Transfer/sec:     45.42MB
